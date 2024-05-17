@@ -38,3 +38,20 @@ export const logOut = (req, res) =>{
         res.status(200).json({msg: "Anda telah logout"});
     });
 }
+
+export const Register = async(req, res) =>{
+    const {name, email, password, confPassword, role} = req.body;
+    if(password !== confPassword) return res.status(400).json({msg: "Password dan Confirm Password tidak cocok"});
+    const hashPassword = await argon2.hash(password);
+    try {
+        await User.create({
+            name: name,
+            email: email,
+            password: hashPassword,
+            role: role
+        });
+        res.status(201).json({msg: "Register Berhasil"});
+    } catch (error) {
+        res.status(400).json({msg: error.message});
+    }
+}
