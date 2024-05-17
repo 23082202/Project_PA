@@ -1,0 +1,103 @@
+// Create a user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name" : "Dimas Riski",
+    "email" : "admin@gmail.com",
+    "password" : "123456",
+    "confPassword" : "123456",
+    "role" : "admin"
+}
+
+###
+// get All Users
+GET http://localhost:5000/users
+
+
+###
+// Get Single User
+GET http://localhost:5000/users/ed06baff-b033-4800-91c5-a7af4e9d40f8
+###
+// Update a user
+PATCH http://localhost:5000/users/80d7ce0b-6f7a-4417-bd64-f6edb034f1a6
+Content-Type: application/json
+
+{
+    "name" : "Abdi",
+    "email" : "abdi@gmail.com",
+    "password" : "123456",
+    "confPassword" : "123456",
+    "role" : "user"
+}
+
+###
+// Delete a user
+DELETE http://localhost:5000/users/00be2c84-b276-478f-8836-16e38afaa495
+
+###
+// Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    
+    "email" : "admin@gmail.com",
+    "password" : "123456"
+    
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    
+    "email" : "abdi@gmail.com",
+    "password" : "123456"
+    
+}
+
+###
+// Me User
+GET http://localhost:5000/me
+
+###
+// Logout User
+DELETE http://localhost:5000/logout
+
+###
+// Get All Products
+GET http://localhost:5000/products
+
+###
+// GET Single Product
+GET http://localhost:5000/products/4f38a7fd-cf6a-4099-88c6-e6d72fdab56f
+
+###
+// POST Data Products
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    
+    "name" : "product 3",
+    "price" : 9000
+    
+}
+
+###
+// Update Data Products
+PATCH http://localhost:5000/products/4f38a7fd-cf6a-4099-88c6-e6d72fdab56f
+Content-Type: application/json
+
+{
+    
+    "name" : "product 10",
+    "price" : 1000
+    
+}
+
+###
+// Delete Data Product
+DELETE http://localhost:5000/products/4f38a7fd-cf6a-4099-88c6-e6d72fdab56f
